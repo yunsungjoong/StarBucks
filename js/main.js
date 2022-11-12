@@ -46,4 +46,11 @@ fadeEls.forEach(function (fadeEl, index) {
     });
 });
 
-
+// new Swiper (선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical',
+    autoplay: true, // 자동재생 여부 
+    loop : true // 반복 재생여부 
+}); 
+// new = 생성자(클래스) 여러가지 객체들을 다룰수있다.
+//  ('') 안에 넣는것을 인수 데이터라고 한다
