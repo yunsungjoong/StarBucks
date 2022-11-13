@@ -54,3 +54,20 @@ new Swiper('.notice-line .swiper-container', {
 }); 
 // new = 생성자(클래스) 여러가지 객체들을 다룰수있다.
 //  ('') 안에 넣는것을 인수 데이터라고 한다
+new Swiper('.promotion .swiper-container', {
+    slidesPerView: 3,  // 한번에 보여줄 슬라이드 개수
+    spaceBetween: 10, // 슬라이드 사이 여백
+    centeredSlides: true, // 1번 슬라이드 가운데 보이기 
+    loop: true,
+    // autoplay: {
+    //     delay: 5000
+    // },
+    pagination: { // 페이지 번호 사용 여부
+        el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+        clickable: true ,// 사용자의 페이지 번호 요소 제어 가능 여부
+      },
+      navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+        prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
+        nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
+      }
+}); 
