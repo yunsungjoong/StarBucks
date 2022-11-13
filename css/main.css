@@ -443,3 +443,9 @@ header .badges .badge{
     right: 0;
     margin: auto;
 }
+
+.notice .promotion .swiper-pagination {
+    bootom: 40px;
+    left: 0;
+    right: 0;
+}
