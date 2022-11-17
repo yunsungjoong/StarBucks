@@ -71,7 +71,7 @@ a {
 }
 .btn.btn--white:hover {
     color: #333;
-    border-color: #fff;
+    background-color: #fff;
 }
 
 
@@ -181,10 +181,6 @@ header .main-menu {
     right: 0;
     z-index: 1px;
     display: flex;
-}
-
-header .main-menu .item {
-
 }
 
 header .main-menu .item .item__name {
@@ -321,11 +317,7 @@ header .badges .badge{
 
 
 /* NOTICE */
-
-.notice {
-
-}
-
+/* NOTICE LINE  */
 .notice .notice-line {
     position: relative;  /* 요소 자기 자신을 기준으로 배치*/
 }
@@ -399,7 +391,8 @@ header .badges .badge{
     align-items: center; /* 수직 가운데 정렬  */
 }
 .notice .notice-line .inner__right h2 { 
-
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .notice .notice-line .inner__right .toggle-promotion { 
@@ -414,18 +407,28 @@ header .badges .badge{
     font-size: 30px;
 }
 
+/*PROMOTION*/
 .notice .promotion {
+    /*width: auto;*/
     height: 693px;
     background-color: #f6f5ef;
     position: relative;
-}
+    overflow: hidden;
+    transition: height .4s;
+  }
+  .notice .promotion.hide {
+    height: 0;
+  }
+
+
 .notice .promotion .swiper-container {
-    width: calc(819px * 3 + 20px); /* calc : 특정한 단위를 계산하는 */
-    height: 553px; 
-    position :absolute;
+    /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+    width: calc(819px * 3 + 20px);
+    height: 553px;
+    position: absolute;
     top: 40px;
     left: 50%;
-    margin-left: calc((819px * 3 + 20px) /-2);
+    margin-left: calc((819px * 3 + 20px) / -2);
 }
 .notice .promotion .swiper-slide {
     opacity: .5;
@@ -604,8 +607,78 @@ header .badges .badge{
     top: 350px;
     left: 150px;
 }
-.youtube .floating3 {
+
+
+/* SEASON PRODUCT */
+.season-product {
+    background-image: url("../images/season_product_bg.jpg");
+}
+.season-product .inner {
+    height: 400px;
+}
+.season-product .floating3 {
     position: absolute;
     top: -200px;
     right: 0;
+}
+.season-product .text-group{
+    position: absolute;
+    top: 110px;
+    right: 100px;
+}
+.season-product .text-group .title {
+    margin-bottom: 10px;
+}
+.season-product .text-group .description {
+    margin-bottom: 15px;
+}
+
+/* RESERVE COFFEE */
+.reserve-coffee {
+ background-image: url("../images/reserve_bg.jpg");
+}
+.reserve-coffee .inner {
+ height: 400px;
+}
+.reserve-coffee .reserve-logo {
+    position: absolute;
+    top: 110px;
+    left: 0;
+}
+.reserve-coffee .text-group {
+    position:absolute;
+    top:124px;
+    left: 208px;;
+
+}
+.reserve-coffee .product {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* pick-your-favorite  */
+.pick-your-favorite {
+    background-image: url("../images/favorite_bg.jpg");
+    background-repeat: no-repeat; /* 배경이미지 반복여부 하나의 이미지만 보이게*/
+    background-position: center; /*세션에 정가운데 위치*/
+    background-attachment: fixed; /*요소가 스크롤될때 같이 스크롤 되는것이 아닌 스크롤이 되더라도 같이 움직이지 않음*/
+    background-size: cover; /* 배경의 이미지를 요소에 넓은 너비에 배경이 맞춰진다.*/
+
+}
+.pick-your-favorite .inner { 
+    padding: 110px 0;
+}
+.pick-your-favorite .text-group { 
+    margin-left: 100px;
+    width: 362px;
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈이 가능한 형태로 바꿔준다.*/
+    justify-content: flex-end;
+}
+.pick-your-favorite .text-group .title{ 
+    margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description {
+    margin-bottom: 40px;
 }
