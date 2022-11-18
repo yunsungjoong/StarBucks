@@ -425,7 +425,7 @@ header .badges .badge{
     /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
     width: calc(819px * 3 + 20px);
     height: 553px;
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 40px;
     left: 50%;
     margin-left: calc((819px * 3 + 20px) / -2);
@@ -440,7 +440,7 @@ header .badges .badge{
 }
 .notice .promotion .swiper-slide .btn {
     /*width: 130px;*/
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     bottom: 0;
     left: 0;
     right: 0;
@@ -474,7 +474,7 @@ header .badges .badge{
     height: 42px;
     border: 2px solid #333;
     border-radius: 50%;
-    position:absolute;
+    position:absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 300px;
     z-index: 1;
     cursor: pointer;
@@ -510,7 +510,7 @@ header .badges .badge{
     width: 50%;
     height: 100%;
     background-color: #272727;
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 0;
     left: 0;
 }
@@ -519,7 +519,7 @@ header .badges .badge{
     width: 50%;
     height: 100%;
     background-color: #d5c798;
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 0;
     right: 0;
 }
@@ -529,7 +529,7 @@ header .badges .badge{
 }
 
 .rewards .btn-group {
-    position:absolute;
+    position:absolute; /* 부모 요소 기준으로 배치하겠다.*/
     bottom: 24px;
     right: 0;
     width: 250px;
@@ -559,7 +559,7 @@ header .badges .badge{
 .youtube .youtube__area {
     width: 1920px;
     background-color: orange;
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     left: 50%;
     margin-left: calc(1920px / -2);
     top: 50%;
@@ -576,7 +576,7 @@ header .badges .badge{
 .youtube .youtube__cover {
     background-image: url("../images/video_cover_pattern.png");
     background-color: rgba(0,0,0,.3);
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top:0;
     left: 0;
     width: 100%;
@@ -586,7 +586,7 @@ header .badges .badge{
 #player { 
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 0;
     left: 0;
 }
@@ -597,13 +597,13 @@ header .badges .badge{
 }
 
 .youtube .floating1 {
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 50px;
     left: 0;
 }
 
 .youtube .floating2 {
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 350px;
     left: 150px;
 }
@@ -617,12 +617,12 @@ header .badges .badge{
     height: 400px;
 }
 .season-product .floating3 {
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: -200px;
     right: 0;
 }
 .season-product .text-group{
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 110px;
     right: 100px;
 }
@@ -641,12 +641,12 @@ header .badges .badge{
  height: 400px;
 }
 .reserve-coffee .reserve-logo {
-    position: absolute;
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top: 110px;
     left: 0;
 }
 .reserve-coffee .text-group {
-    position:absolute;
+    position:absolute; /* 부모 요소 기준으로 배치하겠다.*/
     top:124px;
     left: 208px;;
 
@@ -681,4 +681,56 @@ header .badges .badge{
 }
 .pick-your-favorite .text-group .description {
     margin-bottom: 40px;
+}
+
+/* RESERVE STORE */
+.reserve-store { 
+    background-image: url("../images/reserve_store_bg.jpg");
+    background-repeat: no-repeat; /* 배경이미지 반복여부 하나의 이미지만 보이게*/
+    background-position: center; /*세션에 정가운데 위치*/
+    background-attachment: fixed; /*요소가 스크롤될때 같이 스크롤 되는것이 아닌 스크롤이 되더라도 같이 움직이지 않음*/
+    background-size: cover; /* 배경의 이미지를 요소에 더 넓은 너비에 배경이 맞춰진다.*/
+}
+
+.reserve-store .inner{
+    height: 600px;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬*/
+    align-items: center; /* 수직 가운데 정렬*/
+    
+}
+
+.reserve-store .medal {
+    width: 334px;
+    height: 334px;
+    perspective: 600px; /* 원근거리 조절 */
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+    width: 334px;
+    height: 334px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: .9s; /* 속성을 서서히 변화시키는 속성 */
+}
+.reserve-store .medal .front {
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
+    transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+    transform: rotateY(180deg);
+}
+.reserve-store .medal .back {
+    
+    transform: rotateY(-180deg);
+}
+.reserve-store .medal:hover .back {
+    transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn { 
+    position: absolute; /* 부모 요소 기준으로 배치하겠다.*/
+    top: 240px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
