@@ -121,3 +121,7 @@ spyEls.forEach(function (spyEl) {   // forEach는 메서드를 써서 각각의 
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller()); 
 });
+
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); // 2021
