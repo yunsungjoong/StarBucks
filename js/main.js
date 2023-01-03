@@ -111,7 +111,7 @@ function random(min, max) {
   }
 
 function floatingObject(selector, delay, size) {
-    // gsap.to(오소, 시간 , 옵션);
+    // gsap.to(요소, 시간 , 옵션);
     gsap.to(
         selector, // 선택자
         random(1.5, 2.5),  // 애니메이션 동작 시간
